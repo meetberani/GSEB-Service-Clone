@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static data</title>
+     <link rel="stylesheet" href="index.css">
+       <link rel="stylesheet" href="QuestionPapers.css">
+       <style>
+        .static-data-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.static-data-section h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #0054a6;
+  border-bottom: 2px solid #0054a6;
+  padding-bottom: 10px;
+}
+
+.booklet-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.booklet-card {
+  background-color: #f1f8ff;
+  padding: 15px 20px;
+  border-left: 5px solid #0054a6;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  font-size: 16px;
+  color: #333;
+}
+
+.booklet-card:hover {
+  transform: translateY(-5px);
+  background-color: #e6f0ff;
+}
+
+       </style>
+</head>
+<body>
+     <div class="top-header">
+    <div class="logo-area">
+      <img src="headimg.png" alt="Logo" />
+      <h2>Gujarat Secondary and Higher Secondary Education Board<br><small>Education Department - Official Site</small></h2>
+    </div>
+
+    <div class="top-right">
+      <div>
+        Skip to main content | Screen Reader Access <br />
+        <a href="#">Home</a> |
+        <a href="#">Feedback</a> |
+        <a href="faq.html">FAQ</a> |
+        <a href="#">Sitemap</a>
+      </div>
+      <div class="font-size-controls">
+        <button>A-</button>
+        <button>A</button>
+        <button>A+</button>
+        <span>English</span> |
+        <span>ગુજરાતી</span>
+      </div>
+      <div class="login-register">
+        <a href="login.html">🔓Login</a> |
+        <a href="register.html">➕Register Now</a>
+      </div>
+    </div>
+  </div>
+
+  <nav>
+    <div class="nav-item"><a href="index.html">Home</a></div>
+
+    <div class="nav-item">
+      <select onchange="location = this.value;">
+        <option value="">About Board</option>
+        <option value="OrganizationStructure.html">Organization Structure</option>
+        <option value="Contact.html">Contact</option>
+        <option value="Branches.html">Branches</option>
+      </select>
+    </div>
+
+    <div class="nav-item">
+      <select onchange="location = this.value;">
+        <option value="">School</option>
+        <option value="StaticalData.html">Statical Data</option>
+        <option value="SchoolRegistration.html">School Registration</option>
+        <option value="NewSchoolApplication.html">New School Application</option>
+        <option value="NewClassApplication.html">New Class Application</option>
+      </select>
+    </div>
+
+    <div class="nav-item">
+      <select onchange="location = this.value;">
+        <option value="">Students</option>
+        <option value="10QuestionPaper.html">10 Question Paper</option>
+        <option value="12QuestionPaper.html">12 Question Papers</option>
+      </select>
+    </div>
+
+    <div class="nav-item">
+      <select onchange="location = this.value;">
+        <option value="">Teachers</option>
+        <option value="Teachers.html">Teacher Info</option>
+      </select>
+    </div>
+
+    <div class="nav-item">
+      <a href="Result.html">Result</a>
+    </div>
+
+    <div class="nav-item">
+      <select onchange="location = this.value;">
+        <option value="">E-Citizen</option>
+        <option value="right-to-information.html">Right To Information</option>
+        <option value="act-rules.html">Act & Rules</option>
+        <option value="government-resolutions.html">Govt Resolutions</option>
+        <option value="tenders.html">Tenders</option>
+        <option value="Gallery.html">Gallery</option>
+        <option value="circulars.html">Circulars</option>
+      </select>
+    </div>
+
+    <div class="nav-item"><a href="ImportantLinks.html">Important Links</a></div>
+    <div class="nav-item"><a href="matdaryadi.html">Matdar Yadi</a></div>
+    <div class="nav-item calendar-icon">📅</div>
+  </nav>
+  <section class="static-data-section">
+  <h1>Statistical Data Booklets</h1>
+  <div class="booklet-list">
+    <div class="booklet-card">1. SSC Booklet - 2019</div>
+    <div class="booklet-card">2. HSC General Booklet - 2019</div>
+    <div class="booklet-card">3. HSC Science Booklet - 2019</div>
+    <div class="booklet-card">4. SSC Booklet - 2020</div>
+    <div class="booklet-card">5. HSC Science Booklet - 2020</div>
+    <div class="booklet-card">6. HSC General Booklet - 2020</div>
+    <div class="booklet-card">7. HSC Science Booklet - 2022</div>
+    <div class="booklet-card">8. SSC Booklet - 2022</div>
+    <div class="booklet-card">9. HSC General Booklet - 2022</div>
+    <div class="booklet-card">10. HSC General Booklet - 2023</div>
+    <div class="booklet-card">11. SSC Result Booklet - 2023</div>
+    <div class="booklet-card">12. Science & GUJCET Booklet - 2023</div>
+    <div class="booklet-card">13. SSC Result Booklet - 2024</div>
+    <div class="booklet-card">14. HSC General Result Booklet - 2024</div>
+    <div class="booklet-card">15. HSC Science & GUJCET Result Booklet - 2024</div>
+  </div>
+</section>
+
+    <footer class="last-heading"><center>
+        <p>Education Department | Commissionerate Mid Day Meal & Schools | Commissionerate of Higher Education</p>
+        <p>Gujarat Institute of Educational Technology | Director of Literacy & Continuing Education | Commissionerate of Technical Education</p>
+        <p>Directorate of Primary Education | National Cadet Corps | Sarva Shiksha Abhiyan</p>
+        <p>Gujarat Secondary and Higher Secondary Education Board | State Examination Board</p>
+        <p>Gujarat State Board of School Textbooks | State Board of Technical Examinations Gujarat</p>
+        <p>Gujarat Council of Educational Research and Training</p>
+        <p><a href="index.html">Home Page</a></p>
+        <p>Privacy Policy | Terms of Use | Disclaimer</p>
+        </center>
+    </footer>
+
+    
+</body>
+</html>

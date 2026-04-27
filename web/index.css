@@ -1,0 +1,118 @@
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 10px 20px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-area img {
+      width: 80px;
+      height: auto;
+    }
+
+    .logo-area h2 {
+      margin: 0 0 0 10px;
+      font-size: 18px;
+      line-height: 1.2;
+      color: #1a237e;
+    }
+
+    .top-right {
+      font-size: 13px;
+      text-align: right;
+    }
+
+    .top-right a {
+      text-decoration: none;
+      color: #333;
+      margin-left: 10px;
+    }
+
+    .top-right a:hover {
+      text-decoration: underline;
+    }
+
+    .font-size-controls button {
+      margin: 0 2px;
+    }
+
+    nav {
+      background-color: #114a7e;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    nav a, nav select {
+      color: white;
+      padding: 14px 16px;
+      text-decoration: none;
+      background: none;
+      border: none;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    nav a:hover,
+    nav select:hover {
+      background-color: #0a3960;
+    }
+
+    nav select {
+      background-color: #114a7e;
+      color: white;
+    }
+
+    nav select option {
+      color: black;
+    }
+
+    nav .nav-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      border-left: 1px solid #0a3960;
+    }
+
+    nav .nav-item:first-child {
+      border-left: none;
+    }
+
+    .calendar-icon {
+      font-size: 18px;
+      padding: 14px;
+    }
+
+    .login-register {
+      margin-top: 5px;
+    }
+    .last-heading{
+        background-color: black;
+        color: aliceblue;
+    }
+     footer {
+            margin-top: 60px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            color: #555;
+        }
+
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }

@@ -1,0 +1,120 @@
+<?php
+// Initialize variables
+$name = $mobile = $birthdate = $address = $school = $gender = "";
+$nameErr = $mobileErr = $birthErr = $addressErr = $schoolErr = $genderErr = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $isValid = true;
+
+    // Full Name
+    if (empty($_POST["fullname"]) || strlen(trim($_POST["fullname"])) < 3) {
+        $nameErr = "Full Name must be at least 3 characters.";
+        $isValid = false;
+    } else {
+        $name = htmlspecialchars(trim($_POST["fullname"]));
+    }
+
+    // Mobile
+    if (empty($_POST["mobile"]) || !preg_match("/^[6-9]\d{9}$/", $_POST["mobile"])) {
+        $mobileErr = "Enter a valid 10-digit mobile number starting with 6-9.";
+        $isValid = false;
+    } else {
+        $mobile = htmlspecialchars($_POST["mobile"]);
+    }
+
+    // Birthdate
+    if (empty($_POST["birthdate"])) {
+        $birthErr = "Birthdate is required.";
+        $isValid = false;
+    } else {
+        $birthdate = $_POST["birthdate"];
+        $birth = new DateTime($birthdate);
+        $today = new DateTime();
+        if ($birth >= $today) {
+            $birthErr = "Birthdate cannot be today or in the future.";
+            $isValid = false;
+        }
+    }
+
+    // Address
+    if (empty($_POST["address"]) || strlen(trim($_POST["address"])) < 10) {
+        $addressErr = "Address should be at least 10 characters.";
+        $isValid = false;
+    } else {
+        $address = htmlspecialchars(trim($_POST["address"]));
+    }
+
+    // School
+    if (empty($_POST["school"]) || strlen(trim($_POST["school"])) < 3) {
+        $schoolErr = "School Name must be at least 3 characters.";
+        $isValid = false;
+    } else {
+        $school = htmlspecialchars(trim($_POST["school"]));
+    }
+
+    // Gender
+    if (empty($_POST["gender"])) {
+        $genderErr = "Please select a gender.";
+        $isValid = false;
+    } else {
+        $gender = $_POST["gender"];
+    }
+
+    // Success
+    if ($isValid) {
+        echo "<h3 style='color:green;text-align:center;'>✅ Registration Successful!</h3>";
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register</title>
+  <link rel="stylesheet" href="index.css" />
+  <style>
+    body {font-family: Arial, sans-serif; margin: 0; padding: 0;}
+    form {width: 400px; margin: 30px auto; padding: 20px; border: 1px solid #cccccc; border-radius: 8px; background-color: #f9f9f9;}
+    form input, form textarea, form select {width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 5px; border: 1px solid #ccc; border-radius: 4px;}
+    form input[type="submit"] {background-color: #0059b3; color: white; border: none; cursor: pointer;}
+    form input[type="submit"]:hover {background-color: #004080;}
+    .error-message {color: red; font-size: 13px; margin-bottom: 10px; display: block;}
+  </style>
+</head>
+<body>
+  <form action="" method="POST">
+    <h2>Student Registration Form</h2>
+
+    <label>Full Name:</label>
+    <input type="text" name="fullname" value="<?php echo $name; ?>" required />
+    <span class="error-message"><?php echo $nameErr; ?></span><br />
+
+    <label>Mobile Number:</label>
+    <input type="tel" name="mobile" value="<?php echo $mobile; ?>" required />
+    <span class="error-message"><?php echo $mobileErr; ?></span><br />
+
+    <label>Birthdate:</label>
+    <input type="date" name="birthdate" value="<?php echo $birthdate; ?>" required />
+    <span class="error-message"><?php echo $birthErr; ?></span><br />
+
+    <label>Address:</label>
+    <textarea name="address" rows="3" cols="30" required><?php echo $address; ?></textarea>
+    <span class="error-message"><?php echo $addressErr; ?></span><br />
+
+    <label>School Name:</label>
+    <input type="text" name="school" value="<?php echo $school; ?>" required />
+    <span class="error-message"><?php echo $schoolErr; ?></span><br />
+
+    <label>Gender:</label>
+    <div style="display: flex; gap: 10px; margin-top: 5px; margin-bottom: 5px;">
+      <label><input type="radio" name="gender" value="Male" <?php if($gender=="Male") echo "checked"; ?> /> Male</label>
+      <label><input type="radio" name="gender" value="Female" <?php if($gender=="Female") echo "checked"; ?> /> Female</label>
+      <label><input type="radio" name="gender" value="Other" <?php if($gender=="Other") echo "checked"; ?> /> Other</label>
+    </div>
+    <span class="error-message"><?php echo $genderErr; ?></span><br />
+
+    <input type="submit" value="Submit" />
+  </form>
+</body>
+</html>

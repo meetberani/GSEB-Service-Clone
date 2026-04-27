@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+     <link rel="stylesheet" href="index.css">
+     <style>
+       <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #f8f9fa, #e3f2fd);
+            margin: 0;
+            padding: 0;
+        }
+
+        .hell {
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 40px;
+        }
+
+        form {
+            width: 60%;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        label, input {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .captcha-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .captcha-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #444;
+            background-color: #f1f1f1;
+            padding: 6px 12px;
+            border-radius: 6px;
+            letter-spacing: 3px;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            color: #555;
+        }
+
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+     </style>
+</head>
+<body>
+     <div class="top-header">
+    <div class="logo-area">
+      <img src="headimg.png" alt="Logo" />
+      <h2>Gujarat Secondary and Higher Secondary Education Board<br><small>Education Department - Official Site</small></h2>
+    </div>
+
+    <div class="top-right">
+      <div>
+        Skip to main content | Screen Reader Access <br />
+        <a href="#">Home</a> |
+        <a href="#">Feedback</a> |
+        <a href="faq.html">FAQ</a> |
+        <a href="#">Sitemap</a>
+      </div>
+      <div class="font-size-controls">
+        <button>A-</button>
+        <button>A</button>
+        <button>A+</button>
+        <span>English</span> |
+        <span>ગુજરાતી</span>
+      </div>
+      <div class="login-register">
+        <a href="login.html">🔓Login</a> |
+        <a href="register.html">➕Register Now</a>
+      </div>
+    </div>
+  </div>
+
+  <nav>
+    <div class="nav-item"><a href="index.html">Home</a></div>
+
+    <div class="nav-item">
+      <select onchange="location = this.value;">
+        <option value="">About Board</option>
+        <option value="OrganizationStructure.html">Organization Structure</option>
+        <option value="Contact.html">Contact</option>
+        <option value="Branches.html">Branches</option>
+      </select>
+    </div>
+
+    <div class="nav-item">
+      <select onchange="location = this.value;">
+        <option value="">School</option>
+        <option value="StaticalData.html">Statical Data</option>
+        <option value="SchoolRegistration.html">School Registration</option>
+        <option value="NewSchoolApplication.html">New School Application</option>
+        <option value="NewClassApplication.html">New Class Application</option>
+      </select>
+    </div>
+
+    <div class="nav-item">
+      <select onchange="location = this.value;">
+        <option value="">Students</option>
+        <option value="10QuestionPaper.html">10 Question Paper</option>
+        <option value="12QuestionPaper.html">12 Question Papers</option>
+      </select>
+    </div>
+
+    <div class="nav-item">
+      <select onchange="location = this.value;">
+        <option value="">Teachers</option>
+        <option value="Teachers.html">Teacher Info</option>
+      </select>
+    </div>
+
+    <div class="nav-item">
+      <a href="Result.html">Result</a>
+    </div>
+
+    <div class="nav-item">
+      <select onchange="location = this.value;">
+        <option value="">E-Citizen</option>
+        <option value="right-to-information.html">Right To Information</option>
+        <option value="act-rules.html">Act & Rules</option>
+        <option value="government-resolutions.html">Govt Resolutions</option>
+        <option value="tenders.html">Tenders</option>
+        <option value="Gallery.html">Gallery</option>
+        <option value="circulars.html">Circulars</option>
+      </select>
+    </div>
+
+    <div class="nav-item"><a href="ImportantLinks.html">Important Links</a></div>
+    <div class="nav-item"><a href="matdaryadi.html">Matdar Yadi</a></div>
+     <div class="nav-item calendar-icon">📅</div>
+  </nav>
+   <h2 class="hell">Board Examination Results - 2025</h2>
+
+    <form onsubmit="validateForm(event)">
+        <label for="rollno">Enter Roll Number:</label>
+        <input type="text" id="rollno" name="rollno" required>
+
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <div class="captcha-box">
+            <span class="captcha-text" id="captcha-code"></span>
+            <input type="hidden" id="hidden-captcha">
+        </div>
+
+        <label for="captcha-input">Enter Captcha:</label>
+        <input type="text" id="captcha-input" required>
+
+        <input type="submit" value="Get Result">
+    </form>
+     <script>
+        function generateCaptcha() {
+            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+            let captcha = '';
+            for (let i = 0; i < 5; i++) {
+                captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            document.getElementById('captcha-code').textContent = captcha;
+            document.getElementById('hidden-captcha').value = captcha;
+        }
+
+        function validateForm(event) {
+            const rollno = document.getElementById('rollno').value;
+            const password = document.getElementById('password').value;
+            const enteredCaptcha = document.getElementById('captcha-input').value;
+            const actualCaptcha = document.getElementById('hidden-captcha').value;
+
+            if (rollno === '' || password === '' || enteredCaptcha === '') {
+                alert('Please fill in all fields.');
+                event.preventDefault();
+                return false;
+            }
+
+            if (enteredCaptcha !== actualCaptcha) {
+                alert('Invalid captcha. Please try again.');
+                generateCaptcha();
+                event.preventDefault();
+                return false;
+            }
+        }
+
+        window.onload = generateCaptcha;
+    </script>
+  </form>
+        <footer class="last-heading"><center>
+        <p>Education Department | Commissionerate Mid Day Meal & Schools | Commissionerate of Higher Education</p>
+        <p>Gujarat Institute of Educational Technology | Director of Literacy & Continuing Education | Commissionerate of Technical Education</p>
+        <p>Directorate of Primary Education | National Cadet Corps | Sarva Shiksha Abhiyan</p>
+        <p>Gujarat Secondary and Higher Secondary Education Board | State Examination Board</p>
+        <p>Gujarat State Board of School Textbooks | State Board of Technical Examinations Gujarat</p>
+        <p>Gujarat Council of Educational Research and Training</p>
+        <p><a href="index.html">Home Page</a></p>
+        <p>Privacy Policy | Terms of Use | Disclaimer</p>
+        </center>
+    </footer>
+</body>
+</html>

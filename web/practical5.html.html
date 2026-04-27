@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Events & Students</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f0f2f5;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 10px 0;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .title {
+      font-size: 1.2em;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .student-info {
+      margin-left: 15px;
+      margin-top: 10px;
+      padding-left: 10px;
+      border-left: 3px solid #aaa;
+    }
+    .student-entry {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="section">
+    <h2>Event List</h2>
+    <div id="eventList"></div>
+  </div>
+
+  <div class="section">
+    <h2>Student Profiles</h2>
+    <div id="studentList"></div>
+  </div>
+
+  <script>
+    
+    const eventsJSON = `
+    [
+      {"id": 1, "name": "Hackathon", "date": "2025-08-2"},
+      {"id": 2, "name": "CODE QUAE", "date": "2025-08-3"},
+      {"id": 3, "name": "STEM Quiz", "date": "2025-08-4"}
+    ]`;
+
+    const studentsJSON = `
+    [
+      {"name": "smit", "roll": "24DCE017", "enrolledEvents": [1,2, 3]},
+      {"name": "jeel", "roll": "24DCE013", "enrolledEvents": [2]},
+      {"name": "hit", "roll": "24DCE010", "enrolledEvents": [1, 2, 3]},
+      {"name": "RAJ", "roll": "24DCE019", "enrolledEvents": [1, 2]},
+      {"name": "POOJAN", "roll": "24DCE029", "enrolledEvents": [1, 2, 3]}
+    ]`;
+
+  
+    const events = JSON.parse(eventsJSON);
+    const students = JSON.parse(studentsJSON);
+
+
+    const eventList = document.getElementById("eventList");
+    const studentList = document.getElementById("studentList");
+
+    function createEventCard(event) {
+      const div = document.createElement("div");
+      div.className = "card";
+      div.innerHTML = `
+        <div class="title">${event.name}</div>
+        <div>Date: ${event.date}</div>`;
+
+      const enrolledStudents = students.filter(student =>
+        student.enrolledEvents.includes(event.id)
+      );
+
+      const infoDiv = document.createElement("div");
+      infoDiv.className = "student-info";
+
+      if (enrolledStudents.length > 0) {
+        enrolledStudents.forEach(s => {
+          const entry = document.createElement("div");
+          entry.className = "student-entry";
+          entry.innerHTML = `<div><strong>Name:</strong> ${s.name}</div>
+                             <div><strong>Roll No:</strong> ${s.roll}</div>`;
+          infoDiv.appendChild(entry);
+        });
+      } else {
+        infoDiv.textContent = "No students enrolled.";
+      }
+
+      div.appendChild(infoDiv);
+      return div;
+    }
+
+    function createStudentCard(student, allEvents) {
+      const div = document.createElement("div");
+      div.className = "card";
+
+      const enrolledEventNames = student.enrolledEvents.map(id => {
+        const match = allEvents.find(ev => ev.id === id);
+        return match ? match.name : "Unknown Event";
+      });
+
+      div.innerHTML = `
+        <div class="title">${student.name}</div>
+        <div>Roll No: ${student.roll}</div>
+        <div>Enrolled Events: ${enrolledEventNames.join(", ")}</div>`;
+      return div;
+    }
+
+    events.forEach(event => {
+      const card = createEventCard(event);
+      eventList.appendChild(card);
+    });
+
+    students.forEach(student => {
+      const card = createStudentCard(student, events);
+      studentList.appendChild(card);
+    });
+  </script>
+</body>
+</html>

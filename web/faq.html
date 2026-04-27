@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+        <link rel="stylesheet" href="index.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f7fa;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px;
+    }
+
+    .column {
+      width: 30%;
+    }
+
+    .left-buttons,
+    .right-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .left-buttons p,
+    .right-buttons p {
+      margin: 0;
+    }
+
+    .button-box {
+      background-color: #2286c3;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+
+    .button-box:hover {
+      background-color: #1769aa;
+    }
+
+    .center-panel {
+      background-color: white;
+      border-radius: 6px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .center-panel h3 {
+      margin-top: 0;
+      background-color: #0054a6;
+      color: white;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 18px;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+
+    .tabs label {
+      cursor: pointer;
+      color: #0054a6;
+    }
+
+.news-list {
+  
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+    .news-list option {
+      padding: 5px;
+    }
+
+    .view-all a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .view-all {
+      background-color: #0054a6;
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+
+    .view-all:hover {
+      background-color: #004080;
+    }
+   
+.partner-logos-section {
+  background-color: #f4f4f4;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.logo-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.logo-bar img {
+  width: 117px;
+  max-height: 65px;
+  object-fit: contain;
+  
+}
+
+.logo-bar img:hover {
+  transform: scale(1.05);
+}
+
+  
+       
+       .faq-question {
+      cursor: pointer;
+      background: #f1f1f1;
+      padding: 10px;
+      margin: 5px 0;
+      border-left: 4px solid #0077cc;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+    }
+    </style> 
+
+</head>
+<body>
+  
+  <div class="top-header">
+    <div class="logo-area">
+      <img src="headimg.png" alt="Logo" />
+      <h2>Gujarat Secondary and Higher Secondary Education Board<br><small>Education Department - Official Site</small></h2>
+    </div>
+
+    <div class="top-right">
+      <div>
+        Skip to main content | Screen Reader Access <br />
+        <a href="#">Home</a> |
+        <a href="#">Feedback</a> |
+        <a href="faq.html">FAQ</a> |
+        <a href="#">Sitemap</a>
+      </div>
+      <div class="font-size-controls">
+        <button>A-</button>
+        <button>A</button>
+        <button>A+</button>
+        <span>English</span> |
+        <span>ગુજરાતી</span>
+      </div>
+      <div class="login-register">
+       <a href="login.html">🔓Login</a> |
+        <a href="register.html">➕Register Now</a>
+      </div>
+    </div>
+  </div>
+
+  <nav>
+    <div class="nav-item"><a href="index.html">Home</a></div>
+
+    <div class="nav-item">
+      <select onchange="location = this.value;">
+        <option value="">About Board</option>
+        <option value="OrganizationStructure.html">Organization Structure</option>
+        <option value="Contact.html">Contact</option>
+        <option value="Branches.html">Branches</option>
+      </select>
+    </div>
+
+    <div class="nav-item">
+      <select onchange="location = this.value;">
+        <option value="">School</option>
+        <option value="StaticalData.html">Statical Data</option>
+        <option value="SchoolRegistration.html">School Registration</option>
+        <option value="NewSchoolApplication.html">New School Application</option>
+        <option value="NewClassApplication.html">New Class Application</option>
+      </select>
+    </div>
+
+    <div class="nav-item">
+      <select onchange="location = this.value;">
+        <option value="">Students</option>
+        <option value="10QuestionPaper.html">10 Question Paper</option>
+        <option value="12QuestionPaper.html">12 Question Papers</option>
+      </select>
+    </div>
+
+    <div class="nav-item">
+      <select onchange="location = this.value;">
+        <option value="">Teachers</option>
+        <option value="Teachers.html">Teacher Info</option>
+      </select>
+    </div>
+
+    <div class="nav-item">
+      <a href="Result.html">Result</a>
+    </div>
+
+    <div class="nav-item">
+      <select onchange="location = this.value;">
+        <option value="">E-Citizen</option>
+        <option value="right-to-information.html">Right To Information</option>
+        <option value="act-rules.html">Act & Rules</option>
+        <option value="government-resolutions.html">Govt Resolutions</option>
+        <option value="tenders.html">Tenders</option>
+        <option value="Gallery.html">Gallery</option>
+        <option value="circulars.html">Circulars</option>
+      </select>
+    </div>
+
+    <div class="nav-item"><a href="ImportantLinks.html">Important Links</a></div>
+    <div class="nav-item"><a href="matdaryadi.html">Matdar Yadi</a></div>
+     <div class="nav-item calendar-icon">📅</div>
+  </nav>
+
+    
+      <div>
+        <h2>FAQ-this website</h2>
+    <div class="faq-question">➤ What is gujarat board ?</div>
+    <div class="faq-answer">The Gujarat Secondary and Higher Secondary Education Board 
+        (GSEB) is the primary education board for the state of Gujarat, India.</div>
+
+    <div class="faq-question">➤ How can I join  gujarat </div>
+    <div class="faq-answer"> register for the SSC (Class 10) or HSC (Class 12) exams through the official website, gseb.org</div>
+  <div class="faq-question">➤ Facing problems regarding registration or login ?</div>
+    <div class="faq-answer">In case you are facing any problem regarding the registration or login process, please do get in touch 
+        with us through this form. We would be more than happy to get back to you and help in solving issues you may face while
+         browsing and/or participating through gujarat board, as we value your participation in gujarat board.</div>
+    <div class="faq-question">➤Did not find your suggestions on the platform ?</div>
+    <div class="faq-answer">Do not hesitate to get in touch with us with the same we will address your issue 
+        at the earliest as we value your participation in the MyGov Platform.</div>
+
+          <div class="faq-question">➤Groups:  Collaborate with Government!</div>
+    <div class="faq-answer">Explore & choose from an array of topics on public and national
+        importance on which Government and its respective agency would like to hear from you.
+         Make yourself part of these groups and express your valued views and proposal on these
+          issues. The Government would seek your active engagement and participation in addressing
+           issues mentioned as group topics in the portal. A citizen can only be part of 4 groups at
+            one particular time.</div>
+
+          <div class="faq-question">➤Any other issue ? </div>
+    <div class="faq-answer">Apart from the above mentioned category 
+        if you are facing any other issue with regard to the site, please do
+         not hesitate to get in touch with us. Let us know about your problem with
+         brief description of the issue which you are facing. We would be happy to 
+         revert back to you.
+
+If you wish to submit your feedback or query related to any
+ specific content not related to gujarat board  and is pertaining to
+  any Ministry/Department/Government body other than related togujarat board, 
+  kindly get in touch with the concerned Ministry/Department/Government body 
+  directly or visit their respective websites.gujarat board will not respond to such queries/issues.</div>
+
+</div>
+        <script>
+
+         document.querySelectorAll(".faq-question").forEach(q => {
+      q.addEventListener("click", () => {
+        const answer = q.nextElementSibling;
+        answer.style.display = answer.style.display === "block" ? "none" : "block";
+      });
+    });
+    </script>
+        <footer class="last-heading"><center>
+        <p>Education Department | Commissionerate Mid Day Meal & Schools | Commissionerate of Higher Education</p>
+        <p>Gujarat Institute of Educational Technology | Director of Literacy & Continuing Education | Commissionerate of Technical Education</p>
+        <p>Directorate of Primary Education | National Cadet Corps | Sarva Shiksha Abhiyan</p>
+        <p>Gujarat Secondary and Higher Secondary Education Board | State Examination Board</p>
+        <p>Gujarat State Board of School Textbooks | State Board of Technical Examinations Gujarat</p>
+        <p>Gujarat Council of Educational Research and Training</p>
+        <p><a href="index.html">Home Page</a></p>
+        <p>Privacy Policy | Terms of Use | Disclaimer</p>
+        </center>
+    </footer>
+
+</body>
+</html>

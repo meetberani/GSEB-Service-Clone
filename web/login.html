@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="index.css">
+     <style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f3f6f9;
+}
+
+
+
+.font-size-controls button {
+  margin: 2px;
+}
+
+
+.nav-item {
+  margin: 0 10px;
+}
+
+form {
+  max-width: 400px;
+  background-color: white;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+form input {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+form input[type="submit"] {
+  background-color: #004080;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+form input[type="submit"]:hover {
+  background-color: #002b5e;
+}
+
+footer {
+  background-color: #eee;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #333;
+}
+</style>
+</head>
+<body>
+     <div class="top-header">
+    <div class="logo-area">
+      <img src="headimg.png" alt="Logo" />
+      <h2>Gujarat Secondary and Higher Secondary Education Board<br><small>Education Department - Official Site</small></h2>
+    </div>
+
+    <div class="top-right">
+      <div>
+        Skip to main content | Screen Reader Access <br />
+        <a href="#">Home</a> |
+        <a href="#">Feedback</a> |
+        <a href="faq.html">FAQ</a> |
+        <a href="#">Sitemap</a>
+      </div>
+      <div class="font-size-controls">
+        <button>A-</button>
+        <button>A</button>
+        <button>A+</button>
+        <span>English</span> |
+        <span>ગુજરાતી</span>
+      </div>
+      <div class="login-register">
+       <a href="login.html">🔓Login</a> |
+        <a href="register.html">➕Register Now</a>
+      </div>
+    </div>
+  </div>
+
+  <nav>
+    <div class="nav-item"><a href="index.html">Home</a></div>
+
+    <div class="nav-item">
+      <select onchange="location = this.value;">
+        <option value="">About Board</option>
+        <option value="OrganizationStructure.html">Organization Structure</option>
+        <option value="Contact.html">Contact</option>
+        <option value="Branches.html">Branches</option>
+      </select>
+    </div>
+
+    <div class="nav-item">
+      <select onchange="location = this.value;">
+        <option value="">School</option>
+        <option value="StaticalData.html">Statical Data</option>
+        <option value="SchoolRegistration.html">School Registration</option>
+        <option value="NewSchoolApplication.html">New School Application</option>
+        <option value="NewClassApplication.html">New Class Application</option>
+      </select>
+    </div>
+
+    <div class="nav-item">
+      <select onchange="location = this.value;">
+        <option value="">Students</option>
+        <option value="10QuestionPaper.html">10 Question Paper</option>
+        <option value="12QuestionPaper.html">12 Question Papers</option>
+      </select>
+    </div>
+
+    <div class="nav-item">
+      <select onchange="location = this.value;">
+        <option value="">Teachers</option>
+        <option value="Teachers.html">Teacher Info</option>
+      </select>
+    </div>
+
+    <div class="nav-item">
+      <a href="Result.html">Result</a>
+    </div>
+
+    <div class="nav-item">
+      <select onchange="location = this.value;">
+        <option value="">E-Citizen</option>
+        <option value="right-to-information.html">Right To Information</option>
+        <option value="act-rules.html">Act & Rules</option>
+        <option value="government-resolutions.html">Govt Resolutions</option>
+        <option value="tenders.html">Tenders</option>
+        <option value="Gallery.html">Gallery</option>
+        <option value="circulars.html">Circulars</option>
+      </select>
+    </div>
+
+    <div class="nav-item"><a href="ImportantLinks.html">Important Links</a></div>
+    <div class="nav-item"><a href="matdaryadi.html">Matdar Yadi</a></div>
+     <div class="nav-item calendar-icon">📅</div>
+  </nav>
+
+  <div>
+    
+
+  <form    onsubmit="return validateForm()"  action="login.php" method="POST">
+<p id="demo" ></p>
+<h2>Login</h2>
+
+    <label>Mobile Number:</label><br>
+    <input id="name" id="mobilenumber" type="tel" name="mobile" required><br><br>
+
+    <label for="seatnumber">seat number:</label><br>
+    <input type="text" id="seatnumber" name="seatnumber"><br><br>
+
+    <label for="email">email:</label><br>
+    <input type="text" id="email" name="email"><br><br>
+
+    <label>Password:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <input type="submit" value="Login">
+
+  </form>
+  <script>
+function validateForm() {
+  const mobile = document.getElementById("name").value.trim();
+  const seatnumber = document.getElementById("seatnumber").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const error = document.getElementById("error-message");
+  error.innerText = "";
+
+  const mobileRegex = /^[6-9]\d{9}$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!mobileRegex.test(mobile)) {
+    error.innerText = "Invalid mobile number. It must be 10 digits and start with 6-9.";
+    return false;
+  }
+
+  if (seatnumber.length < 6) {
+    error.innerText = "Seat number must be at least 6 characters.";
+    return false;
+  }
+
+  if (!emailRegex.test(email)) {
+    error.innerText = "Invalid email address.";
+    return false;
+  }
+
+  if (password.length < 6) {
+    error.innerText = "Password must be at least 6 characters.";
+    return false;
+  }
+
+  return true;
+}
+</script>
+
+   <p id="error-message" style="color: red;"></p>
+     <footer class="last-heading"><center>
+        <p>Education Department | Commissionerate Mid Day Meal & Schools | Commissionerate of Higher Education</p>
+        <p>Gujarat Institute of Educational Technology | Director of Literacy & Continuing Education | Commissionerate of Technical Education</p>
+        <p>Directorate of Primary Education | National Cadet Corps | Sarva Shiksha Abhiyan</p>
+        <p>Gujarat Secondary and Higher Secondary Education Board | State Examination Board</p>
+        <p>Gujarat State Board of School Textbooks | State Board of Technical Examinations Gujarat</p>
+        <p>Gujarat Council of Educational Research and Training</p>
+        <p><a href="index.html">Home Page</a></p>
+        <p>Privacy Policy | Terms of Use | Disclaimer</p>
+        </center>
+    </footer>
+</body>
+</html>
